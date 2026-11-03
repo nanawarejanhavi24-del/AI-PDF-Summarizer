@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI PDF Summarizer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>📄 AI PDF Summarizer</h1>
+            <p>
+                Upload a PDF and get its important information
+                in a simple summary.
+            </p>
+        </header>
+
+        <main>
+
+            <section class="upload-card">
+
+                <h2>Upload Your PDF</h2>
+
+                <form id="uploadForm">
+
+                    <label for="pdfFile">
+                        Select PDF document
+                    </label>
+
+                    <input
+                        type="file"
+                        id="pdfFile"
+                        accept=".pdf,application/pdf"
+                        required
+                    >
+
+                    <label for="summaryLength">
+                        Summary Length
+                    </label>
+
+                    <select id="summaryLength">
+                        <option value="short">
+                            Short
+                        </option>
+
+                        <option value="medium" selected>
+                            Medium
+                        </option>
+
+                        <option value="long">
+                            Detailed
+                        </option>
+                    </select>
+
+                    <button type="submit" id="summarizeBtn">
+                        Generate Summary
+                    </button>
+
+                </form>
+
+                <p id="status"></p>
+
+            </section>
+
+
+            <section
+                id="resultSection"
+                class="result-card hidden"
+            >
+
+                <h2>Summary Result</h2>
+
+                <div class="stats">
+
+                    <div>
+                        <span>Pages</span>
+                        <strong id="pageCount">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Original Words</span>
+                        <strong id="originalWords">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Summary Words</span>
+                        <strong id="summaryWords">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-box">
+    <h3>📄 Summary</h3>
+    <div id="summaryText"></div>
+</div>
+
+<div class="key-points-box">
+    <h3>🔑 Key Points</h3>
+    <ul id="keyPoints"></ul>
+</div>
+
+
+                <button id="downloadBtn">
+                    Download Summary
+                </button>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <p>
+                AI PDF Summarizer | AIML Microproject
+            </p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
